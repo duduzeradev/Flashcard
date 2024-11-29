@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Tomorrow&display=swap');
 
 :root {
-  --text-color: #ff0000;
+  --text-color: #ffffff;
   --card-front-color: #ff0000;
-  --card-back-color: #a93c3c;
+  --card-back-color: #ffffff;
 }
 
 body {
