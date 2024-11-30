@@ -34,6 +34,7 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .cartao:hover {
@@ -48,6 +49,8 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .cartao__conteudo h3 {
@@ -67,19 +70,21 @@ main {
 
 .cartao__conteudo__resposta {
   font-size: 1rem;
-  color: #666;
-  background: #f7f7f7;
-  padding: 10px;
+  color: #fff;
+  background: #ff6f61;
+  padding: 15px;
   border-radius: 8px;
   width: 100%;
   margin-top: 10px;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, color 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.cartao__conteudo__resposta:hover {
-  background: #ff6f61;
-  color: #fff;
+/* Exibe a resposta ao passar o mouse sobre o cartão */
+.cartao:hover .cartao__conteudo__resposta {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Footer estiloso */
@@ -89,22 +94,6 @@ footer {
   font-size: 0.9rem;
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Animações */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.cartao {
-  animation: fadeIn 0.5s ease;
 }
 
 /* Responsividade */
